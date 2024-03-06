@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React from "react";
 import { LuShoppingCart, LuUsers } from "react-icons/lu";
 import { BsCartPlus, BsCartCheck } from "react-icons/bs";
 import { IconType } from "react-icons";
@@ -58,16 +58,11 @@ interface SidebarProps {
 
 const AdminSidebar: React.FC<SidebarProps> = ({
   openSidebar,
-  setOpenSidebar,
 }) => {
   const { pathname } = useLocation();
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const handlCloseSidebar = useCallback(
-    () => setOpenSidebar(false),
-    [setOpenSidebar]
-  );
+
 
   const handleLogout = async () => {
     try {
