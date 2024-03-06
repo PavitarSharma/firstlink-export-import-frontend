@@ -1,4 +1,3 @@
-import React from 'react'
 import { FaRegCircleCheck } from "react-icons/fa6";
 
 const FormSuccess = ({ message}: { message: string}) => {

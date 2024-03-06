@@ -1,4 +1,3 @@
-import React from 'react'
 import { AiOutlineWarning } from "react-icons/ai";
 const FormError = ({ message}: { message: string}) => {
 

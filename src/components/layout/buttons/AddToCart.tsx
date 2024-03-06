@@ -1,7 +1,3 @@
-"use client";
-
-import React, { useCallback } from "react";
-
 interface AddToCartProps {
   total: number;
   increment: () => void;

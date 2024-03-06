@@ -58,9 +58,6 @@ const Product = () => {
       try {
         const { data } = await axiosInstance.get(`/products/${id}`);
 
-        console.log(data);
-        
-
         setProduct(data);
       } catch (error) {
         let message;
@@ -291,14 +288,7 @@ const ProductView = ({ product }: { product: IProduct }) => {
     (size: string) => setSelectSize(size),
     []
   );
-  const productCart =
-    carts && carts?.find((item: ICartItem) => item.product._id === product._id);
-
-  const [count, setCount] = useState(
-    productCart?.quantity ? productCart.quantity : 1
-  );
-
-  const [selectCartProduct, setSelectCartProduct] = useState<IProduct>();
+  
   const [selectSize, setSelectSize] = useState(product?.sizes[0]);
   const discount = calculateDiscountedPrice(price, discountPrice);
   const formatDicountPrice = formatPrice(discount, currency);
@@ -317,13 +307,12 @@ const ProductView = ({ product }: { product: IProduct }) => {
         setIsLike(updatedLike);
 
         if (updatedLike) {
-          const data = await addToWishlist(_id, true);
+          const data = await addToWishlist(_id);
 
           dispatch(addProductToWishlist(data));
           toast.success("Added To Wishlist");
         } else {
-          const data = await addToWishlist(_id, false);
-          console.log(updatedLike);
+          const data = await addToWishlist(_id);
           dispatch(removeFromWishlist(data));
           toast.success("Removed From Wishlist");
           return data;

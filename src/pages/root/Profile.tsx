@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import { FaRegUserCircle } from "react-icons/fa";
 import { MdLock, MdLogout } from "react-icons/md";

@@ -27,7 +27,7 @@ const MyProfile = () => {
     resolver: zodResolver(EditProfileSchema),
   });
   const hiddenFileInput = useRef<HTMLInputElement>(null);
-const isAdmin = user?.roles?.includes("admin")
+
   useEffect(() => {
     if (user) {
       setValue("name", user.name);
@@ -103,7 +103,7 @@ const isAdmin = user?.roles?.includes("admin")
     <>
       <div className="w-[200px] h-[200px] relative border-2 rounded-full border-primary/40">
         <img
-          src={isAdmin && user?.profileImg ? user?.profileImg.url : "/images/user.png"}
+          src={user?.profileImg ? user?.profileImg.url : "/images/user.png"}
           alt="profile"
           className="rounded-full object-cover w-full h-full"
         />

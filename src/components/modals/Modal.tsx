@@ -11,7 +11,7 @@ interface ModalProps {
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, body, width="md" }) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [showModal, setShowModal] = useState(isOpen);
+  const [_showModal, setShowModal] = useState(isOpen);
 
   useEffect(() => {
     setShowModal(isOpen);
