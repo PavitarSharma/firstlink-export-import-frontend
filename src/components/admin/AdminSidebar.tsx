@@ -98,7 +98,7 @@ const AdminSidebar: React.FC<SidebarProps> = ({
               <span className="text-3xl font-montez text-primary opacity-90">
                 Clothes & Hair
               </span>
-              <span className="text-[10px] tracking-widest absolute -bottom-2 left-4 text-gray-900 font-dancing-script">
+              <span className="text-[10px] sm:tracking-widest absolute -bottom-2 left-4 text-gray-900 font-dancing-script">
                 FirstLink Export & Import
               </span>
             </div>
